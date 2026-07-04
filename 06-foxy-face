@@ -10,14 +10,14 @@ triangle(50, 30, 90, 40, 50, 95, "orange")
 
 triangle(10, 40, 5, 60, 50, 95, "white")
 
-// TODO: Draw the right part of the face
-
-triangle(50, 30, 10, 40, 50, 95, "orange")
-
 // TODO: Draw the right ear
 // Can you work this out without hovering?
 
 triangle(50, 40, 90, 40, 90, 5, "brown")
+
+// TODO: Draw the right part of the face
+
+triangle(50, 30, 10, 40, 50, 95, "orange")
 
 // TODO: Draw the right cheek
 
