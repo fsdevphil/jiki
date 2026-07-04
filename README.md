@@ -1,2 +1,2 @@
 # jiki
-Jiki
+Exercise Solutions
