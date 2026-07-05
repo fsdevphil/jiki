@@ -1,0 +1,12 @@
+// Look at the pattern of aliens
+// What actions do you repeat for each group?
+// Use: repeat(n) { ... }
+
+repeat(5) {
+  move()
+  move()
+  
+  shoot()
+  shoot()
+  shoot()
+}
