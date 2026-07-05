@@ -1,0 +1,5 @@
+// Roll the ball 60 times to the right
+
+repeat(60) {
+  roll()
+}
