@@ -27,10 +27,10 @@ let skyHeight = canvasHeight
 rectangle(skyLeft, skyTop, skyWidth, skyHeight, skyColor)
 
 // Draw the grass.
-let grassLeft = 0
-let grassTop = canvasHeight - 15
-let grassWidth = canvasWidth
 let grassHeight = 15
+let grassWidth = canvasWidth
+let grassLeft = 0
+let grassTop = canvasHeight - grassHeight
 
 rectangle(grassLeft, grassTop, grassWidth, grassHeight, grassColor)
 
@@ -63,8 +63,7 @@ windowLeft = houseLeft + houseWidth - windowWidth - houseWidth / 7
 rectangle(windowLeft, windowTop, windowWidth, windowHeight, windowColor)
 
 // Draw the door.
-
-let doorWidth = houseWidth / 5
+let doorWidth = windowWidth
 let doorHeight = houseHeight / 2
 let doorLeft = (canvasWidth - doorWidth) / 2
 let doorTop = houseTop + houseHeight - doorHeight
