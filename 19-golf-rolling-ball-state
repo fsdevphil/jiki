@@ -1,0 +1,7 @@
+// Roll the ball into the hole
+let position = 28
+
+repeat(61){
+  moveTo(position)
+  position = position + 1
+}
