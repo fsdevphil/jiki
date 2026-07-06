@@ -1,0 +1,79 @@
+// These colors are fixed for you.
+let skyColor = "skyblue"
+let grassColor = "green"
+let houseColor = "brown"
+let roofColor = "brick"
+let windowColor = "white"
+let doorColor = "dark brown"
+let knobColor = "yellow"
+
+// The canvas is 100 wide.
+let canvasWidth = 100
+
+// Change these two values to check your house scales correctly,
+// but build everything else relative to them.
+let houseWidth = 60
+let houseHeight = 40
+
+// The canvas is 100 high.
+let canvasHeight = canvasWidth
+
+// Draw the sky.
+let skyLeft = 0
+let skyTop = 0
+let skyWidth = canvasWidth
+let skyHeight = canvasHeight
+
+rectangle(skyLeft, skyTop, skyWidth, skyHeight, skyColor)
+
+// Draw the grass.
+let grassLeft = 0
+let grassTop = canvasHeight - 15
+let grassWidth = canvasWidth
+let grassHeight = 15
+
+rectangle(grassLeft, grassTop, grassWidth, grassHeight, grassColor)
+
+// Draw the house.
+let houseLeft = (canvasWidth - houseWidth) / 2
+let houseTop = grassTop - houseHeight + 5
+
+rectangle(houseLeft, houseTop, houseWidth, houseHeight, houseColor)
+
+// Draw the roof.
+let roofLeft = houseLeft - houseWidth / 10
+let roofBaseY = houseTop
+let roofPeakX = canvasWidth / 2
+let roofPeakY = houseTop - houseHeight / 2
+let roofRight = houseLeft + houseWidth + houseWidth / 10
+
+triangle(roofLeft, roofBaseY, roofPeakX, roofPeakY, roofRight, roofBaseY, roofColor)
+
+// Draw the left window.
+let windowLeft = houseLeft + houseWidth / 7
+let windowTop = houseTop + houseHeight / 8
+let windowWidth = houseWidth / 5
+let windowHeight = houseHeight / 3
+
+rectangle(windowLeft, windowTop, windowWidth, windowHeight, windowColor)
+
+// Draw the right window.
+windowLeft = houseLeft + houseWidth - windowWidth - houseWidth / 7
+
+rectangle(windowLeft, windowTop, windowWidth, windowHeight, windowColor)
+
+// Draw the door.
+
+let doorWidth = houseWidth / 5
+let doorHeight = houseHeight / 2
+let doorLeft = (canvasWidth - doorWidth) / 2
+let doorTop = houseTop + houseHeight - doorHeight
+
+rectangle(doorLeft, doorTop, doorWidth, doorHeight, doorColor)
+
+// Draw the knob.
+let knobRadius = doorWidth / 10
+let knobCenterX = doorLeft + doorWidth - doorWidth / 10 - knobRadius
+let knobCenterY = doorTop + doorHeight / 2
+
+circle(knobCenterX, knobCenterY, knobRadius, knobColor)
