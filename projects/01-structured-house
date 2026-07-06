@@ -20,7 +20,7 @@ let canvasHeight = canvasWidth
 
 // Draw the sky.
 let skyLeft = 0
-let skyTop = 0
+let skyTop = skyLeft
 let skyWidth = canvasWidth
 let skyHeight = canvasHeight
 
@@ -29,7 +29,7 @@ rectangle(skyLeft, skyTop, skyWidth, skyHeight, skyColor)
 // Draw the grass.
 let grassHeight = 15
 let grassWidth = canvasWidth
-let grassLeft = 0
+let grassLeft = skyLeft
 let grassTop = canvasHeight - grassHeight
 
 rectangle(grassLeft, grassTop, grassWidth, grassHeight, grassColor)
@@ -70,7 +70,7 @@ let doorTop = houseTop + houseHeight - doorHeight
 
 rectangle(doorLeft, doorTop, doorWidth, doorHeight, doorColor)
 
-// Draw the knob.
+// Draw the doorknob.
 let knobRadius = doorWidth / 10
 let knobCenterX = doorLeft + doorWidth - doorWidth / 10 - knobRadius
 let knobCenterY = doorTop + doorHeight / 2
