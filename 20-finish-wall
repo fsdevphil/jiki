@@ -1,0 +1,11 @@
+// TODO: Build the wall
+let left = 0
+let top = 0
+let width = 20
+let height = 10
+let color = "brick"
+
+repeat(5){
+  rectangle(left, top, width, height, color)
+  left = left + width
+}
