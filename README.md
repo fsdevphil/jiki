@@ -1,2 +1,2 @@
-# jiki
-My exercise and project solutions.
+# Jiki
+My Jiki exercise and project solutions.
