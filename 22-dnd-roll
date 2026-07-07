@@ -1,0 +1,15 @@
+// Roll and announce the dice.
+let attack = roll(20)
+announce(attack)
+
+let baseDamage = roll(12)
+announce(baseDamage)
+
+let bonusDamage = roll(10)
+announce(bonusDamage)
+
+// Calculate the total damage.
+let totalDamage = baseDamage + bonusDamage
+
+// Strike the goblin.
+strike(attack, totalDamage)
