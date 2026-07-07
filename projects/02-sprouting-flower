@@ -1,0 +1,48 @@
+let flowerHeadCenterY = 90
+let flowerHeadRadius = 0
+let pistilRadius = 0
+
+let horizontalCenter = 50
+let groundPosition = 90
+
+let stemHeight = groundPosition - flowerHeadCenterY
+let stemWidth = stemHeight / 10
+let stemX = horizontalCenter - stemWidth / 2
+let leafRadiusX = flowerHeadRadius / 2
+let leafRadiusY = flowerHeadRadius / 5
+let leafLeftCenterX = stemX - leafRadiusX
+let leafRightCenterX = stemX + stemWidth + leafRadiusX
+let leafCenterY = groundPosition - stemHeight / 2
+
+repeat(60) {
+  flowerHeadCenterY = flowerHeadCenterY - 1
+  flowerHeadRadius = flowerHeadRadius + 0.4
+  pistilRadius = pistilRadius + 0.1
+  stemHeight = groundPosition - flowerHeadCenterY
+  stemWidth = stemHeight / 10
+  stemX = horizontalCenter - stemWidth / 2
+  leafRadiusX = flowerHeadRadius / 2
+  leafRadiusY = flowerHeadRadius / 5
+  leafLeftCenterX = stemX - leafRadiusX
+  leafRightCenterX = stemX + stemWidth + leafRadiusX
+  leafCenterY = groundPosition - stemHeight / 2
+
+  // Sky
+  rectangle(0, 0, 100, groundPosition, "skyblue")
+
+  // Ground
+  rectangle(0, groundPosition, 100, 10, "green")
+
+  // Stem
+  rectangle(stemX, flowerHeadCenterY, stemWidth, stemHeight, "green")
+
+  // Flower Head
+  circle(horizontalCenter, flowerHeadCenterY, flowerHeadRadius, "red")
+
+  // Pistil
+  circle(horizontalCenter, flowerHeadCenterY, pistilRadius, "yellow")
+
+  // Leaves
+  ellipse(leafLeftCenterX, leafCenterY, leafRadiusX, leafRadiusY, "green")
+  ellipse(leafRightCenterX, leafCenterY, leafRadiusX, leafRadiusY, "green")
+}
