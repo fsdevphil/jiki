@@ -1,0 +1,35 @@
+// Set the initial values.
+let skyColorHue = 210
+let skyColor = hsl(skyColorHue, 70, 60)
+let sunCenterY = 10
+let sunRadius = 5
+let sunColorGreen = 237
+let sunColor = rgb(255, sunColorGreen, 0)
+
+// Draw a slightly different version of the scene below
+// 100 times - flipbook style!
+
+repeat(100) {
+
+  // Update the values
+  sunRadius = sunRadius + 0.2
+  sunCenterY = sunCenterY + 1
+  sunColorGreen = sunColorGreen - 1
+  skyColorHue = skyColorHue + 1.5
+
+  // Draw new scene
+  
+  // The sky
+  skyColor = hsl(skyColorHue, 70, 60)
+  rectangle(0, 0, 100, 100, skyColor)
+
+  // The Sun
+  sunColor = rgb(255, sunColorGreen, 0)
+  circle(50, sunCenterY, sunRadius, sunColor)
+
+  // The sea
+  rectangle(0, 85, 100, 5, "#0308ce")
+
+  // The sand
+  rectangle(0, 90, 100, 10, "#C2B280")
+}
