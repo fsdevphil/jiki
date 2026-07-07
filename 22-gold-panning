@@ -1,0 +1,9 @@
+// Pan for gold
+let numberOfNuggets = 0
+
+repeat(5){
+  numberOfNuggets = numberOfNuggets + pan()
+}
+
+// Sell your gold
+sell(numberOfNuggets)
