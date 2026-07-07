@@ -1,0 +1,16 @@
+// Draw 100 beautiful rectangles
+let x = 0
+let y = 0
+let width = 1
+let height = 100
+let hue = 0
+let saturation = 50
+let lightness = 50
+
+repeat(100) {
+  let color = hsl(hue, saturation, lightness)
+  rectangle(x, y, width, height, color)
+  
+  x = x + 1
+  hue = hue + 3
+}
