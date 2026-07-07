@@ -12,11 +12,12 @@ let canvasWidth = 100
 
 // Change these two values to check your house scales correctly,
 // but build everything else relative to them.
-let houseWidth = 60
-let houseHeight = 40
+let houseWidth = 44
+let houseHeight = 58
 
 // The canvas is 100 high.
-let canvasHeight = canvasWidth
+let canvasHeight = 100
+let centerX = canvasWidth / 2
 
 // Draw the sky.
 let skyLeft = 0
@@ -35,44 +36,51 @@ let grassTop = canvasHeight - grassHeight
 rectangle(grassLeft, grassTop, grassWidth, grassHeight, grassColor)
 
 // Draw the house.
-let houseLeft = (canvasWidth - houseWidth) / 2
-let houseTop = grassTop - houseHeight + 5
+let houseBottom = grassTop + 5
+let houseLeft = centerX - houseWidth / 2
+let houseTop = houseBottom - houseHeight
 
 rectangle(houseLeft, houseTop, houseWidth, houseHeight, houseColor)
 
 // Draw the roof.
-let roofLeft = houseLeft - houseWidth / 10
+let roofOverhang = houseWidth / 10
+let roofHeight = houseHeight / 2
+
+let roofLeft = houseLeft - roofOverhang
 let roofBaseY = houseTop
-let roofPeakX = canvasWidth / 2
-let roofPeakY = houseTop - houseHeight / 2
-let roofRight = houseLeft + houseWidth + houseWidth / 10
+let roofPeakX = centerX
+let roofPeakY = houseTop - roofHeight
+let roofRight = houseLeft + houseWidth + roofOverhang
 
 triangle(roofLeft, roofBaseY, roofPeakX, roofPeakY, roofRight, roofBaseY, roofColor)
 
-// Draw the left window.
-let windowLeft = houseLeft + houseWidth / 7
-let windowTop = houseTop + houseHeight / 8
+// Draw the first window.
+let windowInset = houseWidth / 7
+let windowDistanceFromTop = houseHeight / 8
+let window1Left = houseLeft + windowInset
+let windowTop = houseTop + windowDistanceFromTop
 let windowWidth = houseWidth / 5
 let windowHeight = houseHeight / 3
 
-rectangle(windowLeft, windowTop, windowWidth, windowHeight, windowColor)
+rectangle(window1Left, windowTop, windowWidth, windowHeight, windowColor)
 
-// Draw the right window.
-windowLeft = houseLeft + houseWidth - windowWidth - houseWidth / 7
+// Draw the second window.
+let window2Left = houseLeft + houseWidth - windowWidth - windowInset
 
-rectangle(windowLeft, windowTop, windowWidth, windowHeight, windowColor)
+rectangle(window2Left, windowTop, windowWidth, windowHeight, windowColor)
 
 // Draw the door.
-let doorWidth = windowWidth
+let doorWidth = houseWidth / 5
 let doorHeight = houseHeight / 2
-let doorLeft = (canvasWidth - doorWidth) / 2
-let doorTop = houseTop + houseHeight - doorHeight
+let doorLeft = centerX - doorWidth / 2
+let doorTop = houseBottom - doorHeight
 
 rectangle(doorLeft, doorTop, doorWidth, doorHeight, doorColor)
 
 // Draw the doorknob.
 let knobRadius = doorWidth / 10
-let knobCenterX = doorLeft + doorWidth - doorWidth / 10 - knobRadius
+let knobOffset = doorWidth / 10
+let knobCenterX = doorLeft + doorWidth - knobRadius - knobOffset
 let knobCenterY = doorTop + doorHeight / 2
 
 circle(knobCenterX, knobCenterY, knobRadius, knobColor)
