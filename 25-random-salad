@@ -1,0 +1,6 @@
+let leaves = Math.randomInt(40, 100)
+let tomatoes = Math.randomInt(5, leaves / 5)
+let croutons = Math.randomInt(tomatoes, tomatoes * 2)
+let olives = Math.randomInt(1, tomatoes / 2)
+
+makeSalad(leaves, tomatoes, croutons, olives)
