@@ -1,0 +1,20 @@
+let hue = 0
+let saturation = 0
+let lightness = 0
+let color = hsl(hue, saturation, lightness)
+
+let centerX = 0
+let centerY = 0
+let radius = 0
+
+repeat(200) {
+  hue = Math.randomInt(0, 360)
+  saturation = Math.randomInt(20, 80)
+  lightness = Math.randomInt(20, 80)
+  color = hsl(hue, saturation, lightness)
+  
+  radius = Math.randomInt(2, 29)
+  centerX = Math.randomInt(radius, 100 - radius)
+  centerY = Math.randomInt(radius, 100 - radius)
+  circle(centerX, centerY, radius, color)
+}
