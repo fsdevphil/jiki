@@ -1,0 +1,13 @@
+// Track your money on the stock market
+let year = 2026
+let balance = 10
+let finalBalance = 0
+
+repeat(20) {
+  balance = balance + balance * (marketGrowth(year) / 100)
+  reportTax(year, balance)
+  year = year + 1
+}
+
+finalBalance = balance
+announceToFamily(finalBalance)
