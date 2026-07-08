@@ -1,0 +1,8 @@
+// Plant the flowers
+let numberOfFlowers = askNumberOfFlowers()
+let position = 100 / (numberOfFlowers + 1)
+
+repeat(numberOfFlowers) {
+  plant(position)
+  position = position + 100 / (numberOfFlowers + 1)
+}
