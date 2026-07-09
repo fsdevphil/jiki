@@ -1,34 +1,31 @@
 // Build the skyscraper
-let totalHeight = numFloors()
 
-let x = 19
-let y = 2
+let numberOfFloors = numFloors()
+let center = 19
+let ground = 2
 
 // Build the ground floor
-buildWall(x - 2, y)
-buildGlass(x - 1, y)
-buildEntrance(x, y)
-buildGlass(x + 1, y)
-buildWall(x + 2, y)
+
+buildWall(center - 2, ground)
+buildGlass(center - 1, ground)
+buildEntrance(center, ground)
+buildGlass(center + 1, ground)
+buildWall(center + 2, ground)
 
 // Build the glass floors
 
-repeat(totalHeight - 1) {
-  y = y + 1
-  
-  buildWall(x - 2, y)
-  buildGlass(x - 1, y)
-  buildGlass(x, y)
-  buildGlass(x + 1, y)
-  buildWall(x + 2, y)
+repeat(numberOfFloors - 1) {
+  buildWall(center - 2, ground + 1)
+  buildGlass(center - 1, ground + 1)
+  buildGlass(center, ground + 1)
+  buildGlass(center + 1, ground + 1)
+  buildWall(center + 2, ground + 1)
+  ground = ground + 1
 }
 
 // Build the roof
 
-y = y + 1
-
-buildWall(x - 2, y)
-buildWall(x - 1, y)
-buildWall(x, y)
-buildWall(x + 1, y)
-buildWall(x + 2, y)
+repeat(5) {
+  buildWall(center - 2, ground + 1)
+  center = center + 1
+}
