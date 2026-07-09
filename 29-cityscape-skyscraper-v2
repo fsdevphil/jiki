@@ -1,0 +1,35 @@
+// Build the skyscraper
+
+let numberOfFloors = numFloors()
+let center = 19
+let ground = 1
+
+// Build the first and last columns
+
+repeat(numberOfFloors + 1) {
+  ground = ground + 1
+  buildWall(center - 2, ground)
+  buildWall(center + 2, ground)
+}
+
+// Build the second and penultimate columns
+
+buildWall(center - 1, ground)
+buildWall(center + 1, ground)
+
+repeat(numberOfFloors) {
+  ground = ground - 1
+  buildGlass(center - 1, ground)
+  buildGlass(center + 1, ground)
+}
+
+// Build the central column
+
+buildEntrance(center, ground)
+
+repeat(numberOfFloors - 1) {
+  ground = ground + 1
+  buildGlass(center, ground)
+}
+
+buildWall(center, ground + 1)
