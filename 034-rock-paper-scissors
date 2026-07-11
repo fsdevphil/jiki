@@ -1,0 +1,12 @@
+// Determine the winner
+
+let andoChoice = getAndoChoice()
+let yukiChoice = getYukiChoice()
+
+if (andoChoice === yukiChoice) {
+  announceResult("tie")
+} else if (andoChoice === "rock" && yukiChoice === "scissors" || andoChoice === "paper" && yukiChoice === "rock" || andoChoice === "scissors" && yukiChoice === "paper") {
+  announceResult("Ando")
+} else {
+  announceResult("Yuki")
+}
